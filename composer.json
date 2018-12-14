@@ -5,6 +5,7 @@
     "php": "^7.1.3",
     "fideloper/proxy": "^4.0",
     "laravel/framework": "5.7.*",
+    "laravel/nova": "~1.0",
     "laravel/tinker": "^1.0"
   },
   "require-dev": {
@@ -19,6 +20,12 @@
     "phpunit/phpunit": "^7.0",
     "roave/security-advisories": "dev-master"
   },
+  "repositories": [
+    {
+      "type": "composer",
+      "url": "https://nova.laravel.com"
+    }
+  ],
   "config": {
     "optimize-autoloader": true,
     "preferred-install": "dist",

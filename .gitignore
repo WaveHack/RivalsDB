@@ -11,5 +11,6 @@
 /_ide_helper_models.php
 /Homestead.json
 /Homestead.yaml
+/auth.json
 npm-debug.log
 yarn-error.log
