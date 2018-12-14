@@ -16,10 +16,10 @@ class CreateCommandersTable extends Migration
         Schema::create('commanders', function (Blueprint $table) {
             $table->increments('id');
             $table->unsignedInteger('faction_id');
-            $table->string('slug');
+            $table->string('slug')->unique();
             $table->string('name');
-            $table->string('description')->nullable();
-            $table->string('rarity');
+            $table->text('description')->nullable();
+            $table->enum('rarity', ['rare']);
             $table->integer('unlocked_at_level');
             $table->integer('base_health');
             $table->integer('harvester_health');
