@@ -14,7 +14,7 @@ class TelescopeServiceProvider extends TelescopeApplicationServiceProvider
      * @var string[] Paths to ignore in Telescope
      */
     protected $ignoredPaths = [
-//        '_debugbar/',
+        '/nova/',
         '/nova-api/',
     ];
 
