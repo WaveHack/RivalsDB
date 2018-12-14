@@ -37,6 +37,7 @@ class Commander extends Resource
         'rarity',
         'unlocked_at_level',
         'commander_power_name',
+        'commander_power_cost',
     ];
 
     /**
