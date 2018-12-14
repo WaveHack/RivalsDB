@@ -20,6 +20,13 @@ class Unit extends Resource
     public static $model = \App\Models\Unit::class;
 
     /**
+     * The logical group associated with the resource.
+     *
+     * @var string
+     */
+    public static $group = 'Game';
+
+    /**
      * The single value that should be used to represent the resource when being displayed.
      *
      * @var string
@@ -111,15 +118,13 @@ class Unit extends Resource
             Select::make('Building')
                 ->sortable()
                 ->options([
-                    'barracks',
-
-//                    'barracks' => '',
-//                    'hand of nod' => '',
-//                    'war factory' => '',
-//                    'helipad' => '',
-//                    'air tower' => '',
-//                    'tech lab' => '',
-//                    'temple of nod' => '',
+                    'barracks' => 'Barracks (GDI)',
+                    'hand of nod' => 'Hand of Nod (Nod)',
+                    'war factory' => 'War Factory',
+                    'helipad' => 'Helipad (GDI)',
+                    'air tower' => 'Air Tower (Nod)',
+                    'tech lab' => 'Tech Lab (GDI)',
+                    'temple of nod' => 'Temple of Nod (Nod)',
                 ])
                 ->rules('required'),
 

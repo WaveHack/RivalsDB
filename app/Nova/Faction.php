@@ -18,6 +18,13 @@ class Faction extends Resource
     public static $model = \App\Models\Faction::class;
 
     /**
+     * The logical group associated with the resource.
+     *
+     * @var string
+     */
+    public static $group = 'Game';
+
+    /**
      * The single value that should be used to represent the resource when being displayed.
      *
      * @var string
@@ -44,8 +51,6 @@ class Faction extends Resource
         return [
             ID::make()->sortable(),
 
-            HasMany::make('Commanders'),
-
             Text::make('Slug')
                 ->onlyOnForms()
                 ->rules('required', 'max:255'),
@@ -56,6 +61,10 @@ class Faction extends Resource
 
             Textarea::make('Description')
                 ->hideFromIndex(),
+
+            HasMany::make('Commanders'),
+
+            HasMany::make('Units'),
         ];
     }
 }

@@ -20,6 +20,13 @@ class Commander extends Resource
     public static $model = \App\Models\Commander::class;
 
     /**
+     * The logical group associated with the resource.
+     *
+     * @var string
+     */
+    public static $group = 'Game';
+
+    /**
      * The single value that should be used to represent the resource when being displayed.
      *
      * @var string
