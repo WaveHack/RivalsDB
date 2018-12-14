@@ -50,6 +50,8 @@ class CreateUnitsTable extends Migration
             ]);
             $table->integer('cost');
             $table->timestamps();
+
+            $table->foreign('faction_id')->references('id')->on('factions');
         });
     }
 
