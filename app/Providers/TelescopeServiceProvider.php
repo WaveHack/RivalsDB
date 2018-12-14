@@ -3,12 +3,22 @@
 namespace App\Providers;
 
 use Illuminate\Support\Facades\Gate;
+use Laravel\Telescope\EntryType;
 use Laravel\Telescope\IncomingEntry;
 use Laravel\Telescope\Telescope;
 use Laravel\Telescope\TelescopeApplicationServiceProvider;
 
 class TelescopeServiceProvider extends TelescopeApplicationServiceProvider
 {
+    /**
+     * @var string[] Paths to ignore in Telescope
+     */
+    protected $ignoredPaths = [
+//        '_debugbar/',
+        '/nova-api/',
+    ];
+
+
     /**
      * Register any application services.
      *
@@ -21,6 +31,12 @@ class TelescopeServiceProvider extends TelescopeApplicationServiceProvider
         $this->hideSensitiveRequestDetails();
 
         Telescope::filter(function (IncomingEntry $entry) {
+            if ($entry->type === EntryType::REQUEST) {
+                if (isset($entry->content['uri']) && starts_with($entry->content['uri'], $this->ignoredPaths)) {
+                    return false;
+                }
+            }
+
             if ($this->app->isLocal()) {
                 return true;
             }
