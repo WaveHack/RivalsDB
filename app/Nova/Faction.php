@@ -2,6 +2,7 @@
 
 namespace App\Nova;
 
+use Laravel\Nova\Fields\HasMany;
 use Laravel\Nova\Fields\ID;
 use Illuminate\Http\Request;
 use Laravel\Nova\Fields\Text;
@@ -42,6 +43,8 @@ class Faction extends Resource
     {
         return [
             ID::make()->sortable(),
+
+            HasMany::make('Commanders'),
 
             Text::make('Slug')
                 ->onlyOnForms()
