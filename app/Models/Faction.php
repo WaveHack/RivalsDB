@@ -10,4 +10,9 @@ class Faction extends Model
     {
         return $this->hasMany(Commander::class);
     }
+
+    public function units()
+    {
+        return $this->hasMany(Unit::class);
+    }
 }

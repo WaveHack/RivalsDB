@@ -1,0 +1,65 @@
+<?php
+
+use Illuminate\Support\Facades\Schema;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Database\Migrations\Migration;
+
+class CreateUnitsTable extends Migration
+{
+    /**
+     * Run the migrations.
+     *
+     * @return void
+     */
+    public function up()
+    {
+        Schema::create('units', function (Blueprint $table) {
+            $table->increments('id');
+            $table->unsignedInteger('faction_id');
+            $table->string('slug')->unique();
+            $table->string('name');
+            $table->text('description')->nullable();
+            $table->enum('rarity', [
+                'common',
+                'rare',
+                'epic',
+            ]);
+            $table->enum('type', [
+                'infantry',
+                'vehicles',
+                'aircraft',
+            ]);
+            $table->integer('unlocked_at_level');
+            $table->integer('health');
+            $table->integer('dps');
+            $table->enum('speed', [
+                'slowest',
+                'slow',
+                'average',
+                'fast',
+                'fastest',
+            ]);
+            $table->enum('building', [
+                'barracks',
+                'hand of nod',
+                'war factory',
+                'helipad',
+                'air tower',
+                'tech lab',
+                'temple of nod',
+            ]);
+            $table->integer('cost');
+            $table->timestamps();
+        });
+    }
+
+    /**
+     * Reverse the migrations.
+     *
+     * @return void
+     */
+    public function down()
+    {
+        Schema::dropIfExists('units');
+    }
+}
