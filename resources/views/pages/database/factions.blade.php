@@ -4,16 +4,7 @@
     <div class="container">
         <div class="row justify-content-center my-3">
             <div class="col-md-6">
-                <div class="input-group">
-                    <div class="input-group-prepend">
-                        <span class="input-group-text" style="background-color: #fff; color: #999;">
-                            <i class="fa fa-search"></i>
-                        </span>
-                    </div>
-                    {{--<form action="#" method="get" class="form-inline">--}}
-                        <input type="search" class="form-control form-control-lg border-left-0 border" placeholder="Search" aria-label="search" style="padding-left: 0;">
-                    {{--</form>--}}
-                </div>
+                @include('partials.global-search')
             </div>
         </div>
 
@@ -23,7 +14,7 @@
                 <div class="card-deck">
 
                     <div class="card">
-                        <img src="assets/images/gdi.png" class="card-img-top">
+                        <img src="/assets/images/gdi.png" class="card-img-top">
                         <div class="card-body">
                             <h5 class="card-title">GDI</h5>
                             <h6 class="card-subtitle mb-2 text-muted">Global Defense Initiative</h6>
@@ -39,7 +30,7 @@
                     </div>
 
                     <div class="card">
-                        <img src="assets/images/nod.png" class="card-img-top">
+                        <img src="/assets/images/nod.png" class="card-img-top">
                         <div class="card-body">
                             <h5 class="card-title">Nod</h5>
                             <h6 class="card-subtitle mb-2 text-muted">Brotherhood of Nod</h6>

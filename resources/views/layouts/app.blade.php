@@ -36,16 +36,16 @@
                 <div class="collapse navbar-collapse" id="navbarCollapse">
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav mr-auto">
-                        <li class="nav-item active">
-                            <a href="#" class="nav-link">News</a>
+                        <li class="nav-item {{ Route::is('news*') ? 'active' : null }}">
+                            <a href="{{ route('news') }}" class="nav-link">News</a>
                         </li>
-                        <li class="nav-item dropdown">
+                        <li class="nav-item dropdown {{ Route::is('database*') ? 'active' : null }}">
                             <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">
                                 Database
                             </a>
                             <div class="dropdown-menu">
                                 <a href="#" class="dropdown-item">Commanders</a>
-                                <a href="#" class="dropdown-item">Factions</a>
+                                <a href="{{ route('database.factions') }}" class="dropdown-item {{ Route::is('database.factions*') ? 'active' : null }}">Factions</a>
                                 <a href="#" class="dropdown-item">Leagues</a>
                                 <a href="#" class="dropdown-item">Maps</a>
                                 <a href="#" class="dropdown-item">Units</a>
