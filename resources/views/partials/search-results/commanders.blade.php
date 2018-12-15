@@ -1,5 +1,5 @@
 <table class="table table-hover mb-0">
-    <caption class="pb-0">
+    <caption class="pb-0 ml-2 mb-2">
         {{ $result[$entityGroup]->count() }} {{ str_plural(str_singular($entityGroup), $result[$entityGroup]->count()) }} found
     </caption>
     <colgroup>
