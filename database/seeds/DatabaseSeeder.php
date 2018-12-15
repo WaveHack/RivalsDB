@@ -26,17 +26,24 @@ class DatabaseSeeder extends Seeder
             'description' => 'The Global Defense Initiative is the global government of Earth. It was founded in accordance with the United Nations Global Defense Act (UNGDA), on the date of 12 October 1995, as a united military force for global peacekeeping.',
         ]);
 
+        \App\Models\Faction::create([
+            'slug' => 'nod',
+            'name' => 'Nod',
+            'full_name' => 'Brotherhood of Nod',
+            'description' => 'The Brotherhood of Nod was a popular, global, religiously developed movement devoted to the guidance of the elusive and charismatic figure of Kane, and the extraterrestrial Tiberium substance that arrived on Earth in 1995.',
+        ]);
+
         \App\Models\Commander::create([
             'faction_id' => $gdiId,
             'slug' => 'lt-strongarm',
             'name' => 'Lt. Strongarm',
-//            'description' => 'placeholder',
+            'description' => 'Lt. Strongarm leads the finest corps of engineers in the GDI armed forces. Tough as nails and smart as a whip, she delights in pulling pranks on the other members of the rank and file.',
             'rarity' => 'rare',
             'unlocked_at_level' => 1,
             'base_health' => 30000,
             'harvester_health' => 3400,
             'commander_power_name' => 'Minigun Turret',
-            'commander_power_description' => '',
+            'commander_power_description' => 'Constructs a turret on the battlefield that is strong against infantry and aircraft. Loses health over time.',
             'commander_power_cost' => 40,
         ]);
 
