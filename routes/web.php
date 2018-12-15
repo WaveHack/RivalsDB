@@ -26,8 +26,7 @@ $router->group(['prefix' => 'database', 'as' => 'database.'], function (Router $
     $router->get('commanders', [CommandersController::class, 'index'])->name('commanders');
 
     $router->get('factions', [FactionsController::class, 'index'])->name('factions');
-    //$router->get('database/factions', 'FactionController@index')->name('factions');
-    //$router->get('database/factions/{slug}', 'FactionController@show')->name('factions.show');
+    $router->get('factions/{slug}', [FactionsController::class, 'show'])->name('factions.show');
 
     // leagues
 
