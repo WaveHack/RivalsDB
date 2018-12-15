@@ -15,7 +15,7 @@
 
                     @foreach ($factions as $faction)
                         <div class="card">
-                            <img class="card-img-bottom" src="/assets/images/logos/factions/{{ $faction->slug }}.png" alt="{{ $faction->name }} logo">
+                            <div class="card-img-top" style="background: url('/assets/images/logos/factions/{{ $faction->slug }}.png') center; background-size: cover; height:128px"></div>
                             <div class="card-body text-left">
                                 <h5 class="card-title">
                                     <img src="/assets/images/icons/factions/{{ $faction->slug }}.png" style="width: 24px;">
