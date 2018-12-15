@@ -4,17 +4,28 @@ namespace App\Http\Controllers\Database;
 
 use App\Http\Controllers\Controller;
 use App\Models\Commander;
+use Illuminate\Http\Request;
 
 class CommandersController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
-        return view('pages.database.commanders.index', [
-            'commanders' => Commander::query()
-                ->with('faction')
-                ->orderBy('unlocked_at_level')
-                ->get(),
-        ]);
+        $query = Commander::query()
+            ->with('faction')
+            ->orderBy('unlocked_at_level');
+
+        if ($request->has('faction')) {
+            $faction = $request->get('faction');
+
+            $query->join('factions', function ($join) use ($faction) {
+                $join->on('commanders.faction_id', '=', 'factions.id')
+                    ->where('factions.slug', $faction);
+            });
+        }
+
+        $commanders = $query->get();
+
+        return view('pages.database.commanders.index', compact('commanders'));
     }
 
     public function show(string $slug)

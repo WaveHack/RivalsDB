@@ -11,6 +11,11 @@
         <div class="row">
             <div class="col-sm-12 col-md-8 offset-md-2 text-center">
                 <h1>Factions</h1>
+
+                @if ($factions->isEmpty())
+                    <p>No results found.</p>
+                @endif
+
                 <div class="card-deck">
                     @foreach ($factions as $faction)
                         <div class="card">

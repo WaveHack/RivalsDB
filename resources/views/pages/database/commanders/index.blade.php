@@ -11,6 +11,11 @@
         <div class="row">
             <div class="col-sm-12 text-center">
                 <h1>Commanders</h1>
+
+                @if ($commanders->isEmpty())
+                    <p>No results found.</p>
+                @endif
+
                 @foreach ($commanders->chunk(4) as $commandersChunked)
                     <div class="card-deck">
                         @foreach ($commandersChunked as $commander)
