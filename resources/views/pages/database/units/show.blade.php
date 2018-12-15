@@ -42,8 +42,10 @@
                             <table class="table mb-0">
                                 <tbody>
                                     <tr>
-                                        <td>Strong vs: todo</td>
-                                        <td class="text-right">Targets: todo</td>
+                                        <td>
+                                            Strong vs: {{ $unit->strengths()->map(function ($value) { return ucfirst($value); })->implode(', ') }}
+                                        </td>
+                                        <td class="text-right">Targets: {{ $unit->targets()->map(function ($value) { return ucfirst($value); })->implode(', ') }}</td>
                                     </tr>
                                     <tr>
                                         <td colspan="2">{{ $unit->battle_description }}</td>
