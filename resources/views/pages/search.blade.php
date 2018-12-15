@@ -69,7 +69,7 @@
                                                     @foreach ($result[$entityGroup] as $item)
                                                         <tr>
                                                             <td>
-                                                                <img src="/assets/images/riflemen.png" alt="Riflemen Icon" style="width: 32px;" class="rounded mr-1">
+                                                                <img src="/assets/images/icons/units/riflemen.png" alt="Riflemen Icon" style="width: 32px;" class="rounded mr-1">
                                                                 <a href="#">{{ $item->name }}</a>
                                                             </td>
                                                             <td class="text-center">Common</td>
@@ -77,7 +77,7 @@
                                                             <td class="text-center">1</td>
                                                             <td class="text-center">10</td>
                                                             <td class="text-center">
-                                                                <img src="/assets/images/GDI-icon.png" alt="GDI Logo" style="width: 32px;">
+                                                                <img src="/assets/images/icons/factions/gdi.png" alt="GDI Icon" style="width: 32px;">
                                                             </td>
                                                         </tr>
                                                     @endforeach

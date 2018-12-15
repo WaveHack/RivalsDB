@@ -3,7 +3,7 @@
 @section('content')
     <div class="container">
         <div class="row justify-content-center my-3">
-            <img src="/assets/images/title.png" alt="">
+            <img src="/assets/images/logos/game.png" alt="">
         </div>
 
         <div class="row justify-content-center my-3">

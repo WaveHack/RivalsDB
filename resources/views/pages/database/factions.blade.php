@@ -15,9 +15,12 @@
 
                     @foreach ($factions as $faction)
                         <div class="card">
-                            <img src="/assets/images/{{ $faction->slug }}.png" alt="{{ $faction->name }} logo">
+                            <img class="card-img-bottom" src="/assets/images/logos/factions/{{ $faction->slug }}.png" alt="{{ $faction->name }} logo">
                             <div class="card-body text-left">
-                                <h5 class="card-title">{{ $faction->name }}</h5>
+                                <h5 class="card-title">
+                                    <img src="/assets/images/icons/factions/{{ $faction->slug }}.png" style="width: 24px;">
+                                    {{ $faction->name }}
+                                </h5>
                                 <h6 class="card-subtitle mb-2 text-muted">{{ $faction->full_name }}</h6>
                                 <p class="card-text">{{ $faction->description }}</p>
                             </div>
