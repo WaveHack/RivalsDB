@@ -18,11 +18,11 @@
         </div>
 
         <div class="row">
-            <div class="col-md-8 offset-2 text-center">
+            <div class="col-xs-12 col-md-8 offset-md-2 text-center">
                 <h1>Factions</h1>
                 <div class="card-deck">
 
-                    <div class="card" {{--style="width: 18rem;"--}}>
+                    <div class="card">
                         <img src="assets/images/gdi.png" class="card-img-top">
                         <div class="card-body">
                             <h5 class="card-title">GDI</h5>
@@ -38,7 +38,7 @@
                         </div>
                     </div>
 
-                    <div class="card" {{--style="width: 18rem;"--}}>
+                    <div class="card">
                         <img src="assets/images/nod.png" class="card-img-top">
                         <div class="card-body">
                             <h5 class="card-title">Nod</h5>
