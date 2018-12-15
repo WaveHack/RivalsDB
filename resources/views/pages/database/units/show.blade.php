@@ -26,13 +26,9 @@
                             {{ ucfirst($unit->rarity) }} {{ ucfirst($unit->type) }}
                         </h4>
 
-                        <h6 class="text-muted mb-3">
-                            Unlocked at level {{ $unit->unlocked_at_level }}
-                        </h6>
+                        <p><em>{{ $unit->description }}</em></p>
 
-                        <p>
-                            <em>{{ $unit->description }}</em>
-                        </p>
+                        <p>Unlocked at level {{ $unit->unlocked_at_level }}.</p>
                     </div>
 
                     <div class="col-sm-5">
