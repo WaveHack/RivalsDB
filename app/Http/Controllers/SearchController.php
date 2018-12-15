@@ -22,17 +22,17 @@ class SearchController extends Controller
 
         $commanders = Commander::where('name', 'like', "%{$query}%")->with('faction')->get();
         if (!$commanders->isEmpty()) {
-            $data['commanders'] = $commanders->toArray();
+            $data['commanders'] = $commanders;
         }
 
         $factions = Faction::where('name', 'like', "%{$query}%")->get();
         if (!$factions->isEmpty()) {
-            $data['factions'] = $factions->toArray();
+            $data['factions'] = $factions;
         }
 
         $units = Unit::where('name', 'like', "%{$query}%")->with('faction')->get();
         if (!$units->isEmpty()) {
-            $data['units'] = $units->toArray();
+            $data['units'] = $units;
         }
 
         return view('pages.search', [
