@@ -21,18 +21,31 @@
         </tr>
     </thead>
     <tbody>
-        @foreach ($result[$entityGroup] as $item)
+        @foreach ($result[$entityGroup] as $unit)
             <tr>
                 <td>
-                    <img src="/assets/images/icons/units/riflemen.png" alt="Riflemen Icon" style="width: 32px;" class="rounded mr-1">
-                    <a href="#">{{ $item->name }}</a>
+                    @php($imgPath = "assets/images/icons/units/{$unit->slug}.png")
+
+                    @if (file_exists(public_path($imgPath)))
+                        <img src="/{{ $imgPath }}" alt="{{ $unit->name }} Icon" style="width: 32px;" class="rounded mr-1">
+                    @endif
+
+                    <a href="#">{{ $unit->name }}</a>
                 </td>
-                <td class="text-center">Common</td>
-                <td class="text-center">Infantry</td>
-                <td class="text-center">1</td>
-                <td class="text-center">10</td>
                 <td class="text-center">
-                    <img src="/assets/images/icons/factions/gdi.png" alt="GDI Icon" style="width: 32px;">
+                    {{ ucfirst($unit->rarity) }}
+                </td>
+                <td class="text-center">
+                    {{ ucfirst($unit->type)  }}
+                </td>
+                <td class="text-center">
+                    {{ $unit->unlocked_at_level }}
+                </td>
+                <td class="text-center">
+                    {{ $unit->cost }}
+                </td>
+                <td class="text-center">
+                    <img src="/assets/images/icons/factions/{{ $unit->faction->slug }}.png" alt="{{ $unit->faction->name }} Icon" style="width: 32px;">
                 </td>
             </tr>
         @endforeach
