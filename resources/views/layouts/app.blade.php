@@ -2,7 +2,7 @@
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
@@ -21,24 +21,52 @@
 </head>
 <body>
     <div id="app">
-        <nav class="navbar navbar-expand-md navbar-light navbar-laravel">
-            <div class="container">
-                <a class="navbar-brand" href="{{ url('/') }}">
+
+        <header>
+            <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+                <a href="{{ route('home') }}" class="navbar-brand">
                     {{ config('app.name', 'Laravel') }}
                 </a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
+
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
 
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <div class="collapse navbar-collapse" id="navbarCollapse">
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav mr-auto">
-
+                        {{--<li class="nav-item active">
+                            <a href="#" class="nav-link">Home</a>
+                        </li>--}}
+                        <li class="nav-item dropdown">
+                            <a href="#" class="nav-link dropdown-toggle" id="navbardrop" data-toggle="dropdown">
+                                Database
+                            </a>
+                            <div class="dropdown-menu">
+                                <a href="#" class="dropdown-item">Commanders</a>
+                                <a href="#" class="dropdown-item">Factions</a>
+                                <a href="#" class="dropdown-item">Leagues</a>
+                                <a href="#" class="dropdown-item">Maps</a>
+                                <a href="#" class="dropdown-item">Units</a>
+                                {{--<div class="dropdown-divider"></div>--}}
+                                {{--<a href="#" class="dropdown-item">foo</a>--}}
+                            </div>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link">Decks</a>
+                        </li>
                     </ul>
 
+                    <!-- Navbar Center -->
+                    <form action="" class="form-inline mt-2 mt-md-0">
+                        <input type="text" class="form-control mr-sm-2" placeholder="Search" aria-label="Search">
+                        {{--<button class="btn btn-primary my-2 my-sm-0" type="submit">
+                            Search
+                        </button>--}}
+                    </form>
+
                     <!-- Right Side Of Navbar -->
-                    <ul class="navbar-nav ml-auto">
-                        <!-- Authentication Links -->
+                    <div class="navbar-nav ml-auto">
                         @guest
                             <li class="nav-item">
                                 <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
@@ -67,12 +95,12 @@
                                 </div>
                             </li>
                         @endguest
-                    </ul>
+                    </div>
                 </div>
-            </div>
-        </nav>
+            </nav>
+        </header>
 
-        <main class="py-4">
+        <main class="py-4" role="main">
             @yield('content')
         </main>
     </div>
