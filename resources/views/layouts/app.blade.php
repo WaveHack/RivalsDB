@@ -36,11 +36,11 @@
                 <div class="collapse navbar-collapse" id="navbarCollapse">
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav mr-auto">
-                        {{--<li class="nav-item active">
-                            <a href="#" class="nav-link">Home</a>
-                        </li>--}}
+                        <li class="nav-item active">
+                            <a href="#" class="nav-link">News</a>
+                        </li>
                         <li class="nav-item dropdown">
-                            <a href="#" class="nav-link dropdown-toggle" id="navbardrop" data-toggle="dropdown">
+                            <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">
                                 Database
                             </a>
                             <div class="dropdown-menu">
@@ -49,15 +49,20 @@
                                 <a href="#" class="dropdown-item">Leagues</a>
                                 <a href="#" class="dropdown-item">Maps</a>
                                 <a href="#" class="dropdown-item">Units</a>
-                                {{--<div class="dropdown-divider"></div>--}}
-                                {{--<a href="#" class="dropdown-item">foo</a>--}}
                             </div>
                         </li>
                         <li class="nav-item">
                             <a href="#" class="nav-link">Decks</a>
                         </li>
-                        <li class="nav-item">
-                            <a href="#" class="nav-link">Content Creators</a>
+                        <li class="nav-item dropdown">
+                            <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">
+                                Content Creators
+                            </a>
+                            <div class="dropdown-menu">
+                                <a href="#" class="dropdown-item">Streams</a>
+                                <a href="#" class="dropdown-item">Podcasts</a>
+                                <a href="#" class="dropdown-item">Videos</a>
+                            </div>
                         </li>
                     </ul>
 
@@ -73,15 +78,17 @@
                                 </li>
                             @endif
                         @else
+                            <li class="nav-item">
+                                <a href="#" class="nav-link">My Decks</a>
+                            </li>
                             <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                     {{ Auth::user()->name }} <span class="caret"></span>
                                 </a>
-
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item" href="{{ route('logout') }}"
-                                       onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
+                                    <a href="#" class="dropdown-item">Settings</a>
+                                    <div class="dropdown-divider"></div>
+                                    <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
                                         {{ __('Logout') }}
                                     </a>
 
