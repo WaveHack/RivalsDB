@@ -25,9 +25,9 @@
                             </div>
                             <div class="card-footer">
                                 <div class="d-flex justify-content-between align-items-center">
-                                    <a href="#">Commanders</a>
-                                    <a href="#">Decks</a>
-                                    <a href="#">Units</a>
+                                    <a href="#">{{ $faction->commanders_count }} {{ str_plural('commander', $faction->commanders_count) }}</a>
+                                    {{--<a href="#">Decks</a>--}}
+                                    <a href="#">{{ $faction->units_count }} {{ str_plural('units', $faction->units_count) }}</a>
                                 </div>
                             </div>
                         </div>

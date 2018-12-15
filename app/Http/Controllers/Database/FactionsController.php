@@ -11,6 +11,7 @@ class FactionsController extends Controller
     {
         return view('pages.database.factions', [
             'factions' => Faction::query()
+                ->withCount(['commanders', 'units'])
                 ->orderBy('name')
                 ->get(),
         ]);
