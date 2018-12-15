@@ -11,12 +11,13 @@ class SearchController extends Controller
 {
     public function index(Request $request)
     {
-        if (!$request->has('q')) {
+        $query = $request->get('q');
+
+        if (in_array($query, ['', null], true)) {
             return redirect()
                 ->route('home');
         }
 
-        $query = $request->get('q');
         $data = [];
 
         $commanders = Commander::where('name', 'like', "%{$query}%")->with('faction')->get();
@@ -35,6 +36,7 @@ class SearchController extends Controller
         }
 
         return view('pages.search', [
+            'query' => $query,
             'result' => $data,
         ]);
     }
