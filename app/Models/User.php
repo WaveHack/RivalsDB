@@ -28,6 +28,11 @@ class User extends Authenticatable implements MustVerifyEmail
         'password', 'remember_token',
     ];
 
+    public function decks()
+    {
+        return $this->hasMany(Deck::class);
+    }
+
     public function profiles()
     {
         return $this->hasMany(Profile::class);
