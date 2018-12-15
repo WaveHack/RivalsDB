@@ -26,7 +26,8 @@
         <header>
             <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
                 <a href="{{ route('home') }}" class="navbar-brand">
-                    {{ config('app.name', 'Laravel') }}
+                    <img src="/assets/images/icons/pn_icon.png" alt="C&C Rivals Icon" style="width: 28px; vertical-align: top;">
+                    {{ config('app.name') }}
                 </a>
 
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
