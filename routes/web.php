@@ -2,7 +2,6 @@
 
 use App\Http\Controllers\Database\FactionsController;
 use App\Http\Controllers\HomeController;
-use App\Http\Controllers\NewsController;
 use App\Http\Controllers\SearchController;
 use Illuminate\Routing\Router;
 
@@ -18,7 +17,7 @@ $router->get('search', [SearchController::class, 'index'])->name('search');
 $router->get('/', [HomeController::class, 'index'])->name('home');
 
 // News
-$router->get('news', [NewsController::class, 'index'])->name('news');
+//$router->get('news', [NewsController::class, 'index'])->name('news');
 
 // Database
 $router->group(['prefix' => 'database', 'as' => 'database.'], function (Router $router) {

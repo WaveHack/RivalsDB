@@ -36,9 +36,9 @@
                 <div class="collapse navbar-collapse" id="navbarCollapse">
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav mr-auto">
-                        <li class="nav-item {{ Route::is('news*') ? 'active' : null }}">
+                        {{--<li class="nav-item {{ Route::is('news*') ? 'active' : null }}">
                             <a href="{{ route('news') }}" class="nav-link">News</a>
-                        </li>
+                        </li>--}}
                         <li class="nav-item dropdown {{ Route::is('database*') ? 'active' : null }}">
                             <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">
                                 Database
