@@ -38,6 +38,20 @@ class DatabaseSeeder extends Seeder
             'commander_power_cost' => 40,
         ]);
 
+        \App\Models\Unit::create([
+            'faction_id' => $gdiId,
+            'slug' => 'riflemen',
+            'name' => 'Riflemen',
+            'rarity' => 'common',
+            'type' => 'infantry',
+            'unlocked_at_level' => 1,
+            'health' => 100,
+            'dps' => 100,
+            'speed' => 'fast',
+            'building' => 'barracks',
+            'cost' => 10,
+        ]);
+
 
     }
 }
