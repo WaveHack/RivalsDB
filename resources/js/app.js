@@ -33,11 +33,9 @@ const app = new Vue({
 });
 
 $(window).keydown(function (e) {
-    const globalSearchEl = $('#global-search');
-
-    // Forward Slash
-    if ((e.which === 191) && !globalSearchEl.is(':focus')) {
+    // Focus global search on forward slash
+    if ((e.which === 191) && ($('input:focus').length === 0)) {
         e.preventDefault();
-        globalSearchEl.focus();
+        $('#global-search').focus();
     }
 });
