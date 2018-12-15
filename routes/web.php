@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Database\CommandersController;
 use App\Http\Controllers\Database\FactionsController;
+use App\Http\Controllers\Database\UnitsController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\SearchController;
 use Illuminate\Routing\Router;
@@ -32,7 +33,8 @@ $router->group(['prefix' => 'database', 'as' => 'database.'], function (Router $
 
     // maps
 
-    // units
+    $router->get('units', [UnitsController::class, 'index'])->name('units');
+    $router->get('units/{slug}', [UnitsController::class, 'show'])->name('units.show');
 
 });
 
