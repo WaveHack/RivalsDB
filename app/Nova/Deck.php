@@ -3,6 +3,7 @@
 namespace App\Nova;
 
 use Laravel\Nova\Fields\BelongsTo;
+use Laravel\Nova\Fields\BelongsToMany;
 use Laravel\Nova\Fields\HasMany;
 use Laravel\Nova\Fields\HasOne;
 use Laravel\Nova\Fields\ID;
@@ -70,7 +71,7 @@ class Deck extends Resource
             Textarea::make('Description')
                 ->hideFromIndex(),
 
-            HasMany::make('Units'),
+            BelongsToMany::make('Units'),
         ];
     }
 }

@@ -69,6 +69,8 @@ class User extends Resource
                 ->creationRules('required', 'string', 'min:6')
                 ->updateRules('nullable', 'string', 'min:6'),
 
+            HasMany::make('Decks'),
+
             HasMany::make('Profiles'),
         ];
     }

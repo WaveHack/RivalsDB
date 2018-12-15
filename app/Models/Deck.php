@@ -18,7 +18,7 @@ class Deck extends Model
 
     public function units()
     {
-        return $this->hasMany(Unit::class);
+        return $this->belongsToMany(Unit::class);
     }
 
     public function user()
