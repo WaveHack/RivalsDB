@@ -37,7 +37,7 @@ class Faction extends Resource
      * @var array
      */
     public static $search = [
-        'id', 'name',
+        'id', 'name', 'full_name',
     ];
 
     /**
@@ -58,6 +58,8 @@ class Faction extends Resource
             Text::make('Name')
                 ->sortable()
                 ->rules('required', 'max:255'),
+
+            Text::make('Full Name'),
 
             Textarea::make('Description')
                 ->hideFromIndex(),

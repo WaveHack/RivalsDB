@@ -13,7 +13,25 @@
                 <h1>Factions</h1>
                 <div class="card-deck">
 
-                    <div class="card">
+                    @foreach ($factions as $faction)
+                        <div class="card">
+                            <img src="/assets/images/{{ $faction->slug }}.png" alt="{{ $faction->name }} logo">
+                            <div class="card-body text-left">
+                                <h5 class="card-title">{{ $faction->name }}</h5>
+                                <h6 class="card-subtitle mb-2 text-muted">{{ $faction->full_name }}</h6>
+                                <p class="card-text">{{ $faction->description }}</p>
+                            </div>
+                            <div class="card-footer">
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <a href="#">Commanders</a>
+                                    <a href="#">Decks</a>
+                                    <a href="#">Units</a>
+                                </div>
+                            </div>
+                        </div>
+                    @endforeach
+
+                    {{--<div class="card">
                         <img src="/assets/images/gdi.png" class="card-img-top">
                         <div class="card-body">
                             <h5 class="card-title">GDI</h5>
@@ -43,7 +61,7 @@
                                 <a href="#">Units</a>
                             </div>
                         </div>
-                    </div>
+                    </div>--}}
 
                 </div>
             </div>

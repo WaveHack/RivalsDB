@@ -22,6 +22,8 @@ class DatabaseSeeder extends Seeder
         $gdiId = \App\Models\Faction::insertGetId([
             'slug' => 'gdi',
             'name' => 'GDI',
+            'full_name' => 'Global Defense Initiative',
+            'description' => 'The Global Defense Initiative is the global government of Earth. It was founded in accordance with the United Nations Global Defense Act (UNGDA), on the date of 12 October 1995, as a united military force for global peacekeeping.',
         ]);
 
         \App\Models\Commander::create([
