@@ -2,8 +2,8 @@
 
 @section('content')
     <div class="container">
-        <div class="row justify-content-center my-3">
-            <img src="/assets/images/logos/game.png" alt="">
+        <div class="row justify-content-center myt-3">
+            <img src="/assets/images/logos/game.png" alt="Command & Conquer Rivals">
         </div>
 
         <div class="row justify-content-center my-3">
