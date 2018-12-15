@@ -31,3 +31,13 @@ Vue.component('example-component', require('./components/ExampleComponent.vue'))
 const app = new Vue({
     el: '#app'
 });
+
+$(window).keydown(function (e) {
+    const globalSearchEl = $('#global-search');
+
+    // Forward Slash
+    if ((e.which === 191) && !globalSearchEl.is(':focus')) {
+        e.preventDefault();
+        globalSearchEl.focus();
+    }
+});

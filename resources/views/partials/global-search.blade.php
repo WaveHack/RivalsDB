@@ -9,6 +9,7 @@
         <input type="search"
                name="q"
                class="form-control form-control-lg border-left-0 border"
+               id="global-search"
                placeholder="Search"
                aria-label="search"
                style="padding-left: 0;">
