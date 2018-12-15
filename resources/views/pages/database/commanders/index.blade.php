@@ -9,9 +9,9 @@
         </div>
 
         <div class="row">
-            <div class="col-xs-12 col-md-8 offset-md-2 text-center">
+            <div class="col-sm-12 text-center">
                 <h1>Commanders</h1>
-                @foreach ($commanders->chunk(2) as $commandersChunked)
+                @foreach ($commanders->chunk(4) as $commandersChunked)
                     <div class="card-deck">
                         @foreach ($commandersChunked as $commander)
                             <div class="card">

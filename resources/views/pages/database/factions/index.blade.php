@@ -9,7 +9,7 @@
         </div>
 
         <div class="row">
-            <div class="col-xs-12 col-md-8 offset-md-2 text-center">
+            <div class="col-sm-12 col-md-8 offset-md-2 text-center">
                 <h1>Factions</h1>
                 <div class="card-deck">
                     @foreach ($factions as $faction)

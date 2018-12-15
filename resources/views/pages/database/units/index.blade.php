@@ -9,9 +9,9 @@
         </div>
 
         <div class="row">
-            <div class="col-xs-12 text-center">
+            <div class="col-sm-12 text-center">
                 <h1>Units</h1>
-                @foreach ($units->chunk(2) as $unitsChunked)
+                @foreach ($units->chunk(4) as $unitsChunked)
                     <div class="card-deck">
                         @foreach ($unitsChunked as $unit)
                             <div class="card">

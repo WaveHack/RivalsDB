@@ -9,7 +9,7 @@
         </div>
 
         <div class="row">
-            <div class="col-xs-12 col-md-8 offset-md-2">
+            <div class="col-sm-12 col-md-8 offset-md-2">
                 <h1>News</h1>
                 <p>There's no news yet. Check back later!</p>
             </div>
