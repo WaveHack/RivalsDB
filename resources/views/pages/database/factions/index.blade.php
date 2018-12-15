@@ -17,13 +17,17 @@
                             @php($imgPath = "assets/images/logos/factions/{$faction->slug}.png")
 
                             @if (file_exists(public_path($imgPath)))
-                                <div class="card-img-top" style="background: url('/{{ $imgPath }}') center; background-size: cover; height:128px"></div>
+                                <a href="{{ route('database.factions.show', $faction->slug) }}">
+                                    <div class="card-img-top" style="background: url('/{{ $imgPath }}') center; background-size: cover; height:128px"></div>
+                                </a>
                             @endif
 
                             <div class="card-body text-left">
                                 <h5 class="card-title">
                                     <img src="/assets/images/icons/factions/{{ $faction->slug }}.png" style="width: 24px;" class="float-right">
-                                    {{ $faction->name }}
+                                    <a href="{{ route('database.factions.show', $faction->slug) }}">
+                                        {{ $faction->name }}
+                                    </a>
                                 </h5>
                                 <h6 class="card-subtitle mb-2 text-muted">{{ $faction->full_name }}</h6>
                                 <p class="card-text">{{ $faction->description }}</p>
