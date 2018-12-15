@@ -14,7 +14,12 @@
                 <div class="card-deck">
                     @foreach ($factions as $faction)
                         <div class="card">
-                            <div class="card-img-top" style="background: url('/assets/images/logos/factions/{{ $faction->slug }}.png') center; background-size: cover; height:128px"></div>
+                            @php($imgPath = "assets/images/logos/factions/{$faction->slug}.png")
+
+                            @if (file_exists(public_path($imgPath)))
+                                <div class="card-img-top" style="background: url('/{{ $imgPath }}') center; background-size: cover; height:128px"></div>
+                            @endif
+
                             <div class="card-body text-left">
                                 <h5 class="card-title">
                                     <img src="/assets/images/icons/factions/{{ $faction->slug }}.png" style="width: 24px;" class="float-right">
@@ -23,6 +28,7 @@
                                 <h6 class="card-subtitle mb-2 text-muted">{{ $faction->full_name }}</h6>
                                 <p class="card-text">{{ $faction->description }}</p>
                             </div>
+
                             <div class="card-footer">
                                 <div class="d-flex justify-content-between align-items-center">
                                     <a href="#">{{ $faction->commanders_count }} {{ str_plural('commander', $faction->commanders_count) }}</a>

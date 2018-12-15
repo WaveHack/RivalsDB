@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Database\CommandersController;
 use App\Http\Controllers\Database\FactionsController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\SearchController;
@@ -22,7 +23,7 @@ $router->get('/', [HomeController::class, 'index'])->name('home');
 // Database
 $router->group(['prefix' => 'database', 'as' => 'database.'], function (Router $router) {
 
-    // commanders
+    $router->get('commanders', [CommandersController::class, 'index'])->name('commanders');
 
     $router->get('factions', [FactionsController::class, 'index'])->name('factions');
     //$router->get('database/factions', 'FactionController@index')->name('factions');
