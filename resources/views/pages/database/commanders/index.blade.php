@@ -34,7 +34,7 @@
 
                                     <h6 class="card-subtitle mb-2 text-muted">
                                         Rare Commander
-                                        <span class="float-right">Level {{ $commander->unlocked_at_level }}</span>
+                                        <span class="float-right">Unlocked at level {{ $commander->unlocked_at_level }}</span>
                                     </h6>
 
                                     <p class="card-text">
