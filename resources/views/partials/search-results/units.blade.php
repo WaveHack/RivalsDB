@@ -30,7 +30,7 @@
                         <img src="/{{ $imgPath }}" alt="{{ $unit->name }} Icon" style="width: 32px;" class="rounded mr-1">
                     @endif
 
-                    <a href="#">{{ $unit->name }}</a>
+                    <a href="{{ route('database.units.show', $unit->slug) }}">{{ $unit->name }}</a>
                 </td>
                 <td class="text-center">
                     {{ ucfirst($unit->rarity) }}
