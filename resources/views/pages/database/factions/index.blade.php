@@ -40,7 +40,7 @@
 
                             <div class="card-footer">
                                 <div class="d-flex justify-content-between align-items-center">
-                                    <a href="#">{{ $faction->commanders_count }} {{ str_plural('commander', $faction->commanders_count) }}</a>
+                                    <a href="{{ route('database.commanders') }}?faction={{ $faction->slug }}">{{ $faction->commanders_count }} {{ str_plural('commander', $faction->commanders_count) }}</a>
                                     {{--<a href="#">Decks</a>--}}
                                     <a href="#">{{ $faction->units_count }} {{ str_plural('unit', $faction->units_count) }}</a>
                                 </div>
