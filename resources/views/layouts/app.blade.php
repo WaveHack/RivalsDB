@@ -59,7 +59,7 @@
                                 Content Creators
                             </a>
                             <div class="dropdown-menu">
-                                <a href="#" class="dropdown-item">Streams</a>
+                                <a href="#" class="dropdown-item">Streamers</a>
                                 <a href="#" class="dropdown-item">Podcasts</a>
                                 <a href="#" class="dropdown-item">Videos</a>
                             </div>
