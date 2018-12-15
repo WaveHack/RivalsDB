@@ -1,5 +1,4 @@
 <form action="{{ route('search') }}" method="get">
-    @csrf
     <div class="input-group">
         <div class="input-group-prepend">
             <span class="input-group-text" style="background-color: #fff; color: #999;">
