@@ -11,9 +11,9 @@
         <div class="row">
             <div class="col-xs-12 col-md-8 offset-md-2 text-center">
                 <h1>Commanders</h1>
-                @foreach ($commanders->chunk(2) as $commanderChunked)
+                @foreach ($commanders->chunk(2) as $commandersChunked)
                     <div class="card-deck">
-                        @foreach ($commanderChunked as $commander)
+                        @foreach ($commandersChunked as $commander)
                             <div class="card">
                                 @php($imgPath = "assets/images/logos/commanders/{$commander->slug}.png")
 
