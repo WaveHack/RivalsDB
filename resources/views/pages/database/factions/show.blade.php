@@ -10,7 +10,12 @@
 
         <div class="row">
             <div class="col-sm-12 col-md-8 offset-md-2">
-                <img src="/assets/images/logos/factions/{{ $faction->slug }}.png" alt="{{ $faction->name }} Logo" style="width: 128px;" class="rounded float-right ml-3">
+                @php($logoPath = "assets/images/logos/factions/{$faction->slug}.png")
+
+                @if (file_exists(public_path($logoPath)))
+                    <img src="/{{  $logoPath }}" alt="{{ $faction->name }} Logo" style="width: 128px;" class="rounded float-right ml-3">
+                @endif
+
                 <h1>
                     <img src="/assets/images/icons/factions/{{ $faction->slug }}.png" alt="{{ $faction->name }} Icon" style="width: 36px;">
                     {{ $faction->full_name }}

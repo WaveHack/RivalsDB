@@ -29,7 +29,11 @@
 
                     <div class="col-sm-5">
                         <div class="card">
-                            <img src="/assets/images/portraits/commanders/{{ $commander->slug }}.jpg" alt="{{ $commander->name }} Portrait" class="card-img-top">
+                            @php($portraitPath = "assets/images/portraits/commanders/{$commander->slug}.jpg")
+
+                            @if (file_exists(public_path($portraitPath)))
+                                <img src="/{{ $portraitPath }}" alt="{{ $commander->name }} Portrait" class="card-img-top">
+                            @endif
 
                             <table class="table mb-0">
                                 <tbody>
