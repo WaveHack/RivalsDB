@@ -52,6 +52,7 @@ class DatabaseSeeder extends Seeder
             'slug' => 'riflemen',
             'name' => 'Riflemen',
             'description' => 'The riflemen squad is GDI\'s standard infantry formation. Equipped with GD-2 automatic rifles and composite body armor, GDI Riflemen are an inexpensive and effective way of destroy enemy infantry units.',
+            'battle_description' => 'Provides vision up to 3 tiles away and reveals adjacent stealthed units.',
             'rarity' => 'common',
             'type' => 'infantry',
             'unlocked_at_level' => 1,

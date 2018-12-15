@@ -1,8 +1,8 @@
 <?php
 
-use Illuminate\Support\Facades\Schema;
-use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
 
 class CreateUnitsTable extends Migration
 {
@@ -19,6 +19,7 @@ class CreateUnitsTable extends Migration
             $table->string('slug')->unique();
             $table->string('name');
             $table->text('description')->nullable();
+            $table->text('battle_description')->nullable();
             $table->enum('rarity', [
                 'common',
                 'rare',
