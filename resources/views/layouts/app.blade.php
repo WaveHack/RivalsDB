@@ -55,15 +55,10 @@
                         <li class="nav-item">
                             <a href="#" class="nav-link">Decks</a>
                         </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link">Content Creators</a>
+                        </li>
                     </ul>
-
-                    <!-- Navbar Center -->
-                    <form action="" class="form-inline mt-2 mt-md-0">
-                        <input type="text" class="form-control mr-sm-2" placeholder="Search" aria-label="Search">
-                        {{--<button class="btn btn-primary my-2 my-sm-0" type="submit">
-                            Search
-                        </button>--}}
-                    </form>
 
                     <!-- Right Side Of Navbar -->
                     <div class="navbar-nav ml-auto">
