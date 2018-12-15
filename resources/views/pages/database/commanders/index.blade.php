@@ -20,11 +20,11 @@
                     <div class="card-deck">
                         @foreach ($commandersChunked as $commander)
                             <div class="card">
-                                @php($imgPath = "assets/images/logos/commanders/{$commander->slug}.png")
+                                @php($portraitPath = "assets/images/portraits/commanders/{$commander->slug}.png")
 
-                                @if (file_exists(public_path($imgPath)))
+                                @if (file_exists(public_path($portraitPath)))
                                     <a href="{{ route('database.commanders.show', $commander->slug) }}">
-                                        <div class="card-img-top" style="background: url('/{{ $imgPath }}') center; background-size: cover; height:128px"></div>
+                                        <div class="card-img-top" style="background: url('/{{ $portraitPath }}') center; background-size: cover; height:128px"></div>
                                     </a>
                                 @endif
 

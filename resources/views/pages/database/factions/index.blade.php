@@ -19,11 +19,11 @@
                 <div class="card-deck">
                     @foreach ($factions as $faction)
                         <div class="card">
-                            @php($imgPath = "assets/images/logos/factions/{$faction->slug}.png")
+                            @php($logoPath = "assets/images/logos/factions/{$faction->slug}.png")
 
-                            @if (file_exists(public_path($imgPath)))
+                            @if (file_exists(public_path($logoPath)))
                                 <a href="{{ route('database.factions.show', $faction->slug) }}">
-                                    <div class="card-img-top" style="background: url('/{{ $imgPath }}') center; background-size: cover; height:128px"></div>
+                                    <div class="card-img-top" style="background: url('/{{ $logoPath }}') center; background-size: cover; height:128px"></div>
                                 </a>
                             @endif
 
