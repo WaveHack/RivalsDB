@@ -34,31 +34,29 @@
                             </ul>
                         </div>
 
-                        <div class="card-body">
-                            <div class="tab-content">
-                                @foreach (array_keys($result) as $entityGroup)
-                                    <div class="tab-pane {{ $loop->first ? 'active' : null }}"
-                                         id="{{ $entityGroup }}"
-                                         role="tabpanel"
-                                         aria-labelledby="{{ $entityGroup }}-tab">
-                                        <div class="table-responsive">
-                                            @switch ($entityGroup)
-                                                @case('commanders')
-                                                    @include('partials.search-results.commanders', compact('entityGroup', 'result'))
-                                                    @break
+                        <div class="tab-content">
+                            @foreach (array_keys($result) as $entityGroup)
+                                <div class="tab-pane {{ $loop->first ? 'active' : null }}"
+                                     id="{{ $entityGroup }}"
+                                     role="tabpanel"
+                                     aria-labelledby="{{ $entityGroup }}-tab">
+                                    <div class="table-responsive">
+                                        @switch ($entityGroup)
+                                            @case('commanders')
+                                                @include('partials.search-results.commanders', compact('entityGroup', 'result'))
+                                                @break
 
-                                                @case('factions')
-                                                    @include('partials.search-results.factions', compact('entityGroup', 'result'))
-                                                    @break
+                                            @case('factions')
+                                                @include('partials.search-results.factions', compact('entityGroup', 'result'))
+                                                @break
 
-                                                @case('units')
-                                                    @include('partials.search-results.units', compact('entityGroup', 'result'))
-                                                    @break
-                                            @endswitch
-                                        </div>
+                                            @case('units')
+                                                @include('partials.search-results.units', compact('entityGroup', 'result'))
+                                                @break
+                                        @endswitch
                                     </div>
-                                @endforeach
-                            </div>
+                                </div>
+                            @endforeach
                         </div>
 
                     </div>
