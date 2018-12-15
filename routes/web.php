@@ -25,6 +25,7 @@ $router->get('/', [HomeController::class, 'index'])->name('home');
 $router->group(['prefix' => 'database', 'as' => 'database.'], function (Router $router) {
 
     $router->get('commanders', [CommandersController::class, 'index'])->name('commanders');
+    $router->get('commanders/{slug}', [CommandersController::class, 'show'])->name('commanders.show');
 
     $router->get('factions', [FactionsController::class, 'index'])->name('factions');
     $router->get('factions/{slug}', [FactionsController::class, 'show'])->name('factions.show');

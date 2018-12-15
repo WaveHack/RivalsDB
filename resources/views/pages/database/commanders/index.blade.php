@@ -23,13 +23,17 @@
                                 @php($imgPath = "assets/images/logos/commanders/{$commander->slug}.png")
 
                                 @if (file_exists(public_path($imgPath)))
-                                    <div class="card-img-top" style="background: url('/{{ $imgPath }}') center; background-size: cover; height:128px"></div>
+                                    <a href="{{ route('database.commanders.show', $commander->slug) }}">
+                                        <div class="card-img-top" style="background: url('/{{ $imgPath }}') center; background-size: cover; height:128px"></div>
+                                    </a>
                                 @endif
 
                                 <div class="card-body text-left">
                                     <h5 class="card-title">
                                         <img src="/assets/images/icons/factions/{{ $commander->faction->slug }}.png" style="width: 24px;" class="float-right">
-                                        {{ $commander->name }}
+                                        <a href="{{ route('database.commanders.show', $commander->slug) }}">
+                                            {{ $commander->name }}
+                                        </a>
                                     </h5>
 
                                     <h6 class="card-subtitle mb-2 text-muted">
