@@ -19,10 +19,10 @@
                         </h1>
 
                         <h4 class="text-muted">
-                            <span class="float-right text-success">
+                            {{--<span class="float-right text-success">
                                 <img src="/assets/images/icons/tiberium.png" alt="Tiberium Cost" style="height: 20px; vertical-align: top;">
                                 <strong>{{ $unit->cost }}</strong>
-                            </span>
+                            </span>--}}
                             {{ ucfirst($unit->rarity) }} {{ ucfirst($unit->type) }}
                         </h4>
 
