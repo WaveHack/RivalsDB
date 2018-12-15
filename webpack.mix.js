@@ -13,6 +13,8 @@ const mix = require('laravel-mix');
 
 mix.setPublicPath('public');
 
+mix.copy('resources/images', 'public/assets/images');
+
 mix.js('resources/js/app.js', 'assets/app.js')
     .sass('resources/sass/app.scss', 'assets/app.css');
 
