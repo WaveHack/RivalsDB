@@ -20,17 +20,29 @@ class SearchController extends Controller
 
         $data = [];
 
-        $commanders = Commander::where('name', 'like', "%{$query}%")->with('faction')->get();
+        $commanders = Commander::query()
+            ->where('name', 'like', "%{$query}%")
+            ->with('faction')
+            ->get();
+
         if (!$commanders->isEmpty()) {
             $data['commanders'] = $commanders;
         }
 
-        $factions = Faction::where('name', 'like', "%{$query}%")->get();
+        $factions = Faction::query()
+            ->where('name', 'like', "%{$query}%")
+            ->withCount(['commanders', 'units'])
+            ->get();
+
         if (!$factions->isEmpty()) {
             $data['factions'] = $factions;
         }
 
-        $units = Unit::where('name', 'like', "%{$query}%")->with('faction')->get();
+        $units = Unit::query()
+            ->where('name', 'like', "%{$query}%")
+            ->with('faction')
+            ->get();
+
         if (!$units->isEmpty()) {
             $data['units'] = $units;
         }
