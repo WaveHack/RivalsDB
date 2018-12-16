@@ -12,8 +12,7 @@ class CommandersController extends Controller
     {
         $query = Commander::query()
             ->with('faction')
-            ->orderBy('faction_id')
-            ->orderBy('unlocked_at_level');
+            ->orderBy('name');
 
         if ($request->has('faction')) {
             $faction = $request->get('faction');
