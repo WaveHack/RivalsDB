@@ -47,6 +47,17 @@ class SearchController extends Controller
             $data['units'] = $units;
         }
 
+        // Check if we have only one result, then we can redirect to the show page right away
+        if (count($data) === 1) {
+            /** @noinspection SuspiciousLoopInspection */
+            foreach ($data as $type => $entities) {
+                if (count($entities) === 1) {
+                    return redirect()
+                        ->route("database.{$type}.show", $entities->first()->slug);
+                }
+            }
+        }
+
         return view('pages.search', [
             'query' => $query,
             'result' => $data,
