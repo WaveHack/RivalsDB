@@ -53,7 +53,7 @@ class SearchController extends Controller
             foreach ($data as $type => $entities) {
                 if (count($entities) === 1) {
                     return redirect()
-                        ->route("database.{$type}.show", $entities->first()->slug);
+                        ->route("db.{$type}.show", $entities->first()->slug);
                 }
             }
         }
