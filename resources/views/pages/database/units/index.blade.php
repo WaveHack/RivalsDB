@@ -17,7 +17,7 @@
                 @endif
 
                 @foreach ($units->chunk(4) as $unitsChunked)
-                    <div class="card-deck">
+                    <div class="card-deck mb-4">
                         @foreach ($unitsChunked as $unit)
                             <div class="card">
                                 @php($portraitPath = "assets/images/portraits/units/{$unit->slug}.jpg")
@@ -38,7 +38,7 @@
 
                                     <h6 class="card-subtitle mb-2 text-muted">
                                         {{ ucfirst($unit->rarity) }} {{ ucfirst($unit->type) }}
-                                        <span class="float-right">Unlocked at level {{ $unit->unlocked_at_level }}</span>
+                                        <span class="float-right">Level {{ $unit->unlocked_at_level }}</span>
                                     </h6>
 
                                     <p class="card-text">

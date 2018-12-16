@@ -17,7 +17,7 @@
                 @endif
 
                 @foreach ($commanders->chunk(4) as $commandersChunked)
-                    <div class="card-deck">
+                    <div class="card-deck mb-4">
                         @foreach ($commandersChunked as $commander)
                             <div class="card">
                                 @php($portraitPath = "assets/images/portraits/commanders/{$commander->slug}.png")
@@ -38,19 +38,12 @@
 
                                     <h6 class="card-subtitle mb-2 text-muted">
                                         Rare Commander
-                                        <span class="float-right">Unlocked at level {{ $commander->unlocked_at_level }}</span>
+                                        <span class="float-right">Level {{ $commander->unlocked_at_level }}</span>
                                     </h6>
 
                                     <p class="card-text">
                                         <em>{{ $commander->flavor_description }}</em>
                                     </p>
-                                    {{--<p class="card-text">
-                                        <strong>Commander Power:</strong> {{ $commander->commander_power_name }}<br>
-                                        Tiberium Cost: {{ $commander->commander_power_cost }}
-                                    </p>
-                                    <p class="card-text">
-                                        <em>{{ $commander->commander_power_description }}</em>
-                                    </p>--}}
                                 </div>
                             </div>
                         @endforeach
