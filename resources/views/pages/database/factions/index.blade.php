@@ -35,7 +35,9 @@
                                     </a>
                                 </h5>
                                 <h6 class="card-subtitle mb-2 text-muted">{{ $faction->full_name }}</h6>
-                                <p class="card-text">{{ $faction->description }}</p>
+                                <p class="card-text">
+                                    <em>{{ $faction->description }}</em>
+                                </p>
                             </div>
 
                             <div class="card-footer">
