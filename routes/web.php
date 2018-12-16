@@ -39,6 +39,10 @@ $router->group(['prefix' => 'db', 'as' => 'db.'], function (Router $router) {
 
 });
 
+$router->get('about', function () {
+    return view('pages.about');
+})->name('about');
+
 // decks
 
 // content creators / discover
