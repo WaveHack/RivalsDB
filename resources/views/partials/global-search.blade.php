@@ -10,6 +10,7 @@
                name="q"
                class="form-control form-control-lg border-left-0 border"
                id="global-search"
+               autocomplete="off"
                placeholder="{{ isset($placeholder) ? "Results for '{$placeholder}'" : 'Search' }}"
                aria-label="search"
                style="padding-left: 0;">
