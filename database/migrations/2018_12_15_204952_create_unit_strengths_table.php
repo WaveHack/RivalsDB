@@ -15,7 +15,7 @@ class CreateUnitStrengthsTable extends Migration
     {
         Schema::create('unit_strengths', function (Blueprint $table) {
             $table->unsignedInteger('unit_id');
-            $table->enum('type', ['infantry', 'vehicles', 'aircraft']);
+            $table->enum('type', ['infantry', 'vehicles', 'aircraft', 'buildings']);
 
             $table->primary(['unit_id', 'type']);
 
