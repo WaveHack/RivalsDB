@@ -23,6 +23,37 @@ body {
   }
 }
 
+$rarity-common: rgb(214, 203, 162);
+$rarity-rare: rgb(67, 144, 232);
+$rarity-epic: rgb(217, 43, 229);
+
+.rarity-common {
+  color: darken($rarity-common, 20%);
+}
+
+.rarity-rare {
+  color: $rarity-rare;
+}
+
+.rarity-epic {
+  color: $rarity-epic;
+}
+
+.card-rarity-common {
+  border: 2px solid transparentize($rarity-common, .75);
+}
+
+.card-rarity-rare {
+  border: 2px solid transparentize($rarity-rare, .75);
+}
+
+.card-rarity-epic {
+  border: 2px solid transparentize($rarity-epic, .75);
+}
+
+
+// GitHub corner
+
 .github-corner:hover .octo-arm {
   animation: octocat-wave 560ms ease-in-out
 }

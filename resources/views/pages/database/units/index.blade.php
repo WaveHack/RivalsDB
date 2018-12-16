@@ -19,7 +19,7 @@
                 @foreach ($units->chunk(4) as $unitsChunked)
                     <div class="card-deck mb-4">
                         @foreach ($unitsChunked as $unit)
-                            <div class="card">
+                            <div class="card card-rarity-{{ $unit->rarity }}">
                                 @php($portraitPath = "assets/images/portraits/units/{$unit->slug}.jpg")
 
                                 @if (file_exists(public_path($portraitPath)))
@@ -37,7 +37,10 @@
                                     </h5>
 
                                     <h6 class="card-subtitle mb-2 text-muted">
-                                        {{ ucfirst($unit->rarity) }} {{ ucfirst($unit->type) }}
+                                        <span class="rarity-{{ $unit->rarity }}">
+                                            {{ ucfirst($unit->rarity) }}
+                                            {{ ucfirst($unit->type) }}
+                                        </span>
                                         {{--<span class="float-right">Level {{ $unit->unlocked_at_level }}</span>--}}
                                     </h6>
 
