@@ -49,3 +49,61 @@ $router->group(['prefix' => 'db', 'as' => 'db.'], function (Router $router) {
 $router->group(['middleware' => 'verified'], function (Router $router) {
     // my decks
 });
+
+$router->get('test', function () {
+    if (app()->environment() !== 'local') {
+        abort(404);
+    }
+
+//    $fp = fopen(resource_path('data/commanders.csv'), 'r');
+    $fp = fopen(resource_path('data/units.csv'), 'r');
+
+    $headers = [];
+
+    while (!feof($fp)) {
+        if (empty($headers)) {
+            $headers = fgetcsv($fp);
+            continue;
+        }
+
+        $data = array_combine($headers, fgetcsv($fp));
+
+        \App\Models\Unit::updateOrCreate([
+            'slug' => str_slug($data['Name']),
+        ], [
+            'faction_id' => ($data['Faction'] === 'GDI' ? 1 : 2),
+            'name' => $data['Name'],
+            'flavor_description' => $data['Flavor'],
+            'item_description'=> $data['Item Description'],
+            'rarity' => $data['Rarity'],
+            'type' => $data['Type'],
+            'unlocked_at_level' => $data['Unlocked at level'],
+            'health' => 0,
+            'dps' => 0,
+            'speed' => $data['Speed'] ?: 'average',
+            'building' => $data['Building'],
+            'cost' => $data['Cost'],
+        ]);
+
+        // strong vs
+        // targets
+
+//        \App\Models\Commander::updateOrCreate([
+//            'slug' => str_slug($data['Name']),
+//        ], [
+//            'faction_id' => ($data['Faction'] === 'GDI' ? 1 : 2),
+//            'name' => $data['Name'],
+//            'flavor_description' => $data['Flavor'],
+//            'rarity' => 'rare',
+//            'unlocked_at_level' => $data['Unlocked at level'],
+//            'base_health' => 30000,
+//            'harvester_health' => 3400,
+//            'commander_power_name' => $data['Power Name'],
+//            'commander_power_description' => $data['Power Description'],
+//            'commander_power_cost' => $data['Power Cost'],
+//        ]);
+    }
+
+    fclose($fp);
+    return 'Done';
+});
