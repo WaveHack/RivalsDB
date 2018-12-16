@@ -22,7 +22,9 @@
                             {{ ucfirst($commander->rarity) }} Commander
                         </h4>
 
-                        <p><em>{{ $commander->description }}</em></p>
+                        <p>
+                            <em>{{ $commander->flavor_description }}</em>
+                        </p>
 
                         <p>Unlocked at level {{ $commander->unlocked_at_level }}.</p>
                     </div>

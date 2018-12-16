@@ -1,8 +1,8 @@
 <?php
 
-use Illuminate\Support\Facades\Schema;
-use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
 
 class CreateCommandersTable extends Migration
 {
@@ -18,7 +18,7 @@ class CreateCommandersTable extends Migration
             $table->unsignedInteger('faction_id');
             $table->string('slug')->unique();
             $table->string('name');
-            $table->text('description')->nullable();
+            $table->text('flavor_description')->nullable();
             $table->enum('rarity', ['rare']);
             $table->integer('unlocked_at_level');
             $table->integer('base_health');

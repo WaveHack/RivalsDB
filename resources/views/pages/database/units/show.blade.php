@@ -26,7 +26,9 @@
                             {{ ucfirst($unit->rarity) }} {{ ucfirst($unit->type) }}
                         </h4>
 
-                        <p><em>{{ $unit->description }}</em></p>
+                        <p>
+                            <em>{{ $unit->flavor_description }}</em>
+                        </p>
 
                         <p>Unlocked at level {{ $unit->unlocked_at_level }}.</p>
                     </div>
@@ -48,7 +50,7 @@
                                         <td class="text-right">Targets: {{ $unit->targets()->map(function ($value) { return ucfirst($value); })->implode(', ') }}</td>
                                     </tr>
                                     <tr>
-                                        <td colspan="2">{{ $unit->battle_description }}</td>
+                                        <td colspan="2">{{ $unit->item_description }}</td>
                                     </tr>
                                     <tr>
                                         <td>Health: {{ number_format($unit->health) }}</td>

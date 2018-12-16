@@ -42,7 +42,7 @@
                                     </h6>
 
                                     <p class="card-text">
-                                        {{ $unit->description }}
+                                        <em>{{ $unit->flavor_description }}</em>
                                     </p>
                                 </div>
                             </div>

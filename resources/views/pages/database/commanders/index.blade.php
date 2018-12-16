@@ -42,7 +42,7 @@
                                     </h6>
 
                                     <p class="card-text">
-                                        {{ $commander->description }}
+                                        <em>{{ $commander->flavor_description }}</em>
                                     </p>
                                     {{--<p class="card-text">
                                         <strong>Commander Power:</strong> {{ $commander->commander_power_name }}<br>

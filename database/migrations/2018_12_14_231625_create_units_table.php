@@ -18,8 +18,8 @@ class CreateUnitsTable extends Migration
             $table->unsignedInteger('faction_id');
             $table->string('slug')->unique();
             $table->string('name');
-            $table->text('description')->nullable();
-            $table->text('battle_description')->nullable();
+            $table->text('flavor_description')->nullable();
+            $table->text('item_description')->nullable();
             $table->enum('rarity', [
                 'common',
                 'rare',
