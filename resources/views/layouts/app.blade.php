@@ -72,7 +72,7 @@
                     </ul>
 
                     <!-- Right Side Of Navbar -->
-                    <div class="navbar-nav ml-auto">
+                    <?php /*<div class="navbar-nav ml-auto">
                         @guest
                             <li class="nav-item">
                                 <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
@@ -103,7 +103,7 @@
                                 </div>
                             </li>
                         @endguest
-                    </div>
+                    </div> */ ?>
                 </div>
             </nav>
         </header>
