@@ -40,7 +40,7 @@
                         {{--<li class="nav-item {{ Route::is('news*') ? 'active' : null }}">
                             <a href="{{ route('news') }}" class="nav-link">News</a>
                         </li>--}}
-                        <li class="nav-item dropdown {{ Route::is('database*') ? 'active' : null }}">
+                        <li class="nav-item dropdown {{ Route::is('db*') ? 'active' : null }}">
                             <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">
                                 Database
                             </a>
