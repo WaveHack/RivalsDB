@@ -24,7 +24,7 @@
                         <img src="/{{ $imgPath }}" alt="{{ $faction->name }} Icon" style="width: 32px;" class="rounded mr-1">
                     @endif
 
-                    <a href="{{ route('database.factions.show', $faction->slug) }}">{{ $faction->name }}</a>
+                    <a href="{{ route('db.factions.show', $faction->slug) }}">{{ $faction->name }}</a>
                 </td>
                 <td class="text-center">
                     {{ $faction->commanders_count }}

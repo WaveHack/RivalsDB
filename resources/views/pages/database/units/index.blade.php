@@ -23,7 +23,7 @@
                                 @php($portraitPath = "assets/images/portraits/units/{$unit->slug}.jpg")
 
                                 @if (file_exists(public_path($portraitPath)))
-                                    <a href="{{ route('database.units.show', $unit->slug) }}">
+                                    <a href="{{ route('db.units.show', $unit->slug) }}">
                                         <div class="card-img-top" style="background: url('/{{ $portraitPath }}') center; background-size: cover; height:128px"></div>
                                     </a>
                                 @endif
@@ -31,7 +31,7 @@
                                 <div class="card-body text-left">
                                     <h5 class="card-title">
                                         <img src="/assets/images/icons/factions/{{ $unit->faction->slug }}.png" style="width: 24px;" class="float-right">
-                                        <a href="{{ route('database.units.show', $unit->slug) }}">
+                                        <a href="{{ route('db.units.show', $unit->slug) }}">
                                             {{ $unit->name }}
                                         </a>
                                     </h5>

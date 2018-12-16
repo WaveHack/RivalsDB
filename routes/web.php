@@ -22,7 +22,7 @@ $router->get('/', [HomeController::class, 'index'])->name('home');
 //$router->get('news', [NewsController::class, 'index'])->name('news');
 
 // Database
-$router->group(['prefix' => 'database', 'as' => 'database.'], function (Router $router) {
+$router->group(['prefix' => 'db', 'as' => 'db.'], function (Router $router) {
 
     $router->get('commanders', [CommandersController::class, 'index'])->name('commanders');
     $router->get('commanders/{slug}', [CommandersController::class, 'show'])->name('commanders.show');

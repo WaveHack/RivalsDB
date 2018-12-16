@@ -45,9 +45,9 @@
                                 Database
                             </a>
                             <div class="dropdown-menu">
-                                <a href="{{ route('database.commanders') }}" class="dropdown-item {{ Route::is('database.commanders*') ? 'active' : null }}">Commanders</a>
-                                <a href="{{ route('database.factions') }}" class="dropdown-item {{ Route::is('database.factions*') ? 'active' : null }}">Factions</a>
-                                <a href="{{ route('database.units') }}" class="dropdown-item {{ Route::is('database.units*') ? 'active' : null }}">Units</a>
+                                <a href="{{ route('db.commanders') }}" class="dropdown-item {{ Route::is('db.commanders*') ? 'active' : null }}">Commanders</a>
+                                <a href="{{ route('db.factions') }}" class="dropdown-item {{ Route::is('db.factions*') ? 'active' : null }}">Factions</a>
+                                <a href="{{ route('db.units') }}" class="dropdown-item {{ Route::is('db.units*') ? 'active' : null }}">Units</a>
                                 {{--<div class="dropdown-divider"></div>--}}
                                 {{--<a href="#" class="dropdown-item">Leagues</a>--}}
                                 {{--<a href="#" class="dropdown-item">Maps</a>--}}

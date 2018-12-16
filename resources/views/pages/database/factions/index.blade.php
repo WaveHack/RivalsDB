@@ -22,7 +22,7 @@
                             @php($logoPath = "assets/images/logos/factions/{$faction->slug}.png")
 
                             @if (file_exists(public_path($logoPath)))
-                                <a href="{{ route('database.factions.show', $faction->slug) }}">
+                                <a href="{{ route('db.factions.show', $faction->slug) }}">
                                     <div class="card-img-top" style="background: url('/{{ $logoPath }}') center; background-size: cover; height:128px"></div>
                                 </a>
                             @endif
@@ -30,7 +30,7 @@
                             <div class="card-body text-left">
                                 <h5 class="card-title">
                                     <img src="/assets/images/icons/factions/{{ $faction->slug }}.png" style="width: 24px;" class="float-right">
-                                    <a href="{{ route('database.factions.show', $faction->slug) }}">
+                                    <a href="{{ route('db.factions.show', $faction->slug) }}">
                                         {{ $faction->name }}
                                     </a>
                                 </h5>
@@ -40,9 +40,13 @@
 
                             <div class="card-footer">
                                 <div class="d-flex justify-content-between align-items-center">
-                                    <a href="{{ route('database.commanders') }}?faction={{ $faction->slug }}">{{ $faction->commanders_count }} {{ str_plural('commander', $faction->commanders_count) }}</a>
+                                    <a href="{{ route('db.commanders') }}?faction={{ $faction->slug }}">
+                                        {{ $faction->commanders_count }} {{ str_plural('commander', $faction->commanders_count) }}
+                                    </a>
                                     {{--<a href="#">Decks</a>--}}
-                                    <a href="{{ route('database.units') }}?faction={{ $faction->slug }}">{{ $faction->units_count }} {{ str_plural('unit', $faction->units_count) }}</a>
+                                    <a href="{{ route('db.units') }}?faction={{ $faction->slug }}">
+                                        {{ $faction->units_count }} {{ str_plural('unit', $faction->units_count) }}
+                                    </a>
                                 </div>
                             </div>
                         </div>
