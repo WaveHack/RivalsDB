@@ -2,9 +2,7 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Model;
-
-class Profile extends Model
+class Profile extends AbstractModel
 {
     public function user()
     {

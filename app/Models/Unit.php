@@ -3,9 +3,8 @@
 namespace App\Models;
 
 use DB;
-use Illuminate\Database\Eloquent\Model;
 
-class Unit extends Model
+class Unit extends AbstractModel
 {
     public function deck()
     {

@@ -2,9 +2,7 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Model;
-
-class Faction extends Model
+class Faction extends AbstractModel
 {
     public function commanders()
     {

@@ -2,9 +2,7 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Model;
-
-class Deck extends Model
+class Deck extends AbstractModel
 {
     public function commander()
     {
