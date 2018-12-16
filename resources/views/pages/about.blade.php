@@ -19,6 +19,7 @@
                     <li>Highscore list of the top 100 players and their decks,</li>
                     <li>User accounts, with the ability to link your in-game profile to view your game statistics,</li>
                     <li>News section, with official updates, patch notes etc,</li>
+                    <li>Dedicated sections for content creators, including links to (and embedded) videos on YouTube and Twitch,</li>
                     <li>Deck builder system, where you can create, share, rate and comment decks</li>
                     <li>Map creation system, where you can create, share, rate and comment custom maps (as suggestions to the devs)</li>
                 </ul>
