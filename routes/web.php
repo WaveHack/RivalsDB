@@ -55,8 +55,8 @@ $router->get('test', function () {
         abort(404);
     }
 
-//    $fp = fopen(resource_path('data/commanders.csv'), 'r');
-    $fp = fopen(resource_path('data/units.csv'), 'r');
+    // Commanders
+    $fp = fopen(resource_path('data/commanders.csv'), 'r');
 
     $headers = [];
 
@@ -68,7 +68,40 @@ $router->get('test', function () {
 
         $data = array_combine($headers, fgetcsv($fp));
 
-        \App\Models\Unit::updateOrCreate([
+        \App\Models\Commander::updateOrCreate([
+            'slug' => str_slug($data['Name']),
+        ], [
+            'faction_id' => ($data['Faction'] === 'GDI' ? 1 : 2),
+            'name' => $data['Name'],
+            'flavor_description' => $data['Flavor'],
+            'rarity' => 'rare',
+            'unlocked_at_level' => $data['Unlocked at level'],
+            'base_health' => 30000,
+            'harvester_health' => 3400,
+            'commander_power_name' => $data['Power Name'],
+            'commander_power_description' => $data['Power Description'],
+            'commander_power_cost' => $data['Power Cost'],
+        ]);
+    }
+
+    fclose($fp);
+
+    // Units
+    $fp = fopen(resource_path('data/units.csv'), 'r');
+    DB::table('unit_strengths')->truncate();
+    DB::table('unit_targets')->truncate();
+
+    $headers = [];
+
+    while (!feof($fp)) {
+        if (empty($headers)) {
+            $headers = fgetcsv($fp);
+            continue;
+        }
+
+        $data = array_combine($headers, fgetcsv($fp));
+
+        $unit = \App\Models\Unit::updateOrCreate([
             'slug' => str_slug($data['Name']),
         ], [
             'faction_id' => ($data['Faction'] === 'GDI' ? 1 : 2),
@@ -85,23 +118,20 @@ $router->get('test', function () {
             'cost' => $data['Cost'],
         ]);
 
-        // strong vs
-        // targets
+        foreach (explode(',', $data['Strong vs']) as $type) {
+            DB::table('unit_strengths')->insert([
+                'unit_id' => $unit->id,
+                'type' => trim($type),
+            ]);
+        }
 
-//        \App\Models\Commander::updateOrCreate([
-//            'slug' => str_slug($data['Name']),
-//        ], [
-//            'faction_id' => ($data['Faction'] === 'GDI' ? 1 : 2),
-//            'name' => $data['Name'],
-//            'flavor_description' => $data['Flavor'],
-//            'rarity' => 'rare',
-//            'unlocked_at_level' => $data['Unlocked at level'],
-//            'base_health' => 30000,
-//            'harvester_health' => 3400,
-//            'commander_power_name' => $data['Power Name'],
-//            'commander_power_description' => $data['Power Description'],
-//            'commander_power_cost' => $data['Power Cost'],
-//        ]);
+        foreach (explode(',', $data['Targets']) as $type) {
+            DB::table('unit_targets')->insert([
+                'unit_id' => $unit->id,
+                'type' => trim($type),
+            ]);
+
+        }
     }
 
     fclose($fp);
