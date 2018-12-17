@@ -24,7 +24,7 @@
 
                                 @if (file_exists(public_path($portraitPath)))
                                     <a href="{{ route('db.commanders.show', $commander->slug) }}">
-                                        <img src="/{{ $portraitPath }}" alt="{{ $commander->name }}'s Portrait" class="card-img-top">
+                                        <img src="/{{ $portraitPath }}" alt="Portrait of commander {{ $commander->name }}" class="card-img-top">
                                     </a>
                                 @endif
 
