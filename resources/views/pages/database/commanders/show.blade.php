@@ -31,7 +31,7 @@
 
                     <div class="col-sm-5">
                         <div class="card">
-                            @php($portraitPath = "assets/images/portraits/commanders/{$commander->slug}.jpg")
+                            @php($portraitPath = "assets/images/portraits/commanders/{$commander->slug}-full.jpg")
 
                             @if (file_exists(public_path($portraitPath)))
                                 <img src="/{{ $portraitPath }}" alt="{{ $commander->name }} Portrait" class="card-img-top">
