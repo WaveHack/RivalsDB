@@ -45,7 +45,7 @@
                                     </h6>
 
                                     <p class="card-text">
-                                        <em>{{ str_limit($commander->flavor_description, 200) }}</em>
+                                        <em>{{ $commander->flavor_description }}</em>
                                     </p>
                                 </div>
                             </div>
