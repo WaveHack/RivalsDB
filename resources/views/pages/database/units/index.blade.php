@@ -20,7 +20,7 @@
                     <div class="card-deck mb-4">
                         @foreach ($unitsChunked as $unit)
                             <div class="card card-rarity-{{ $unit->rarity }}">
-                                @php($portraitPath = "assets/images/portraits/units/{$unit->slug}-card.png")
+                                @php($portraitPath = "assets/images/portraits/units/{$unit->faction->slug}/{$unit->slug}.png")
 
                                 @if (file_exists(public_path($portraitPath)))
                                     <a href="{{ route('db.units.show', $unit->slug) }}">
