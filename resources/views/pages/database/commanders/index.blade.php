@@ -29,7 +29,7 @@
 
                                     <div class="card-body text-left">
                                         <h5 class="card-title">
-                                            <img src="/assets/images/icons/factions/{{ $commander->faction->slug }}.png" style="width: 24px;" class="float-right">
+                                            <img src="/assets/images/icons/factions/{{ $commander->faction->slug }}.png" alt="{{ $commander->faction->name }} Logo" title="{{ $commander->faction->name }}" style="width: 24px;" class="float-right">
                                             <a href="{{ route('db.commanders.show', $commander->slug) }}">
                                                 {{ $commander->name }}
                                             </a>
