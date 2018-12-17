@@ -35,10 +35,10 @@
 
                     <div class="col-sm-5">
                         <div class="card">
-                            @php($portraitPath = "assets/images/portraits/units/{$unit->slug}.jpg")
+                            @php($portraitPath = "assets/images/portraits/units/{$unit->faction->slug}/{$unit->slug}.png")
 
                             @if (file_exists(public_path($portraitPath)))
-                                <img src="/{{ $portraitPath }}" alt="{{ $unit->name }} Portrait" class="card-img-top">
+                                <img src="/{{ $portraitPath }}" alt="Portrait of unit {{ $unit->name }}" class="card-img-top">
                             @endif
 
                             <table class="table mb-0">

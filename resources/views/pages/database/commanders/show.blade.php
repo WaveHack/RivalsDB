@@ -34,7 +34,7 @@
                             @php($portraitPath = "assets/images/portraits/commanders/{$commander->slug}-full.jpg")
 
                             @if (file_exists(public_path($portraitPath)))
-                                <img src="/{{ $portraitPath }}" alt="{{ $commander->name }} Portrait" class="card-img-top">
+                                <img src="/{{ $portraitPath }}" alt="Portrait of commander {{ $commander->name }}" class="card-img-top">
                             @endif
 
                             <table class="table mb-0">
