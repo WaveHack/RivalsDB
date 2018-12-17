@@ -20,11 +20,11 @@
                     <div class="card-deck mb-4">
                         @foreach ($commandersChunked as $commander)
                             <div class="card card-rarity-{{ $commander->rarity }}">
-                                @php($portraitPath = "assets/images/portraits/commanders/{$commander->slug}.png")
+                                @php($portraitPath = "assets/images/portraits/commanders/{$commander->slug}-card.jpg")
 
                                 @if (file_exists(public_path($portraitPath)))
                                     <a href="{{ route('db.commanders.show', $commander->slug) }}">
-                                        <div class="card-img-top" style="background: url('/{{ $portraitPath }}') center; background-size: cover; height:128px"></div>
+                                        <img src="/{{ $portraitPath }}" alt="{{ $commander->name }}'s Portrait" class="card-img-top">
                                     </a>
                                 @endif
 
