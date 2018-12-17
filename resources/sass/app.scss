@@ -11,7 +11,7 @@
 }
 
 body {
-  background: #E5E5E5 url('/assets/images/background.jpg') no-repeat fixed bottom right;
+  background: #E5E5E5;
   padding-top: 3rem;
 }
 
@@ -51,6 +51,11 @@ $rarity-epic: rgb(217, 43, 229);
   border: 2px solid transparentize($rarity-epic, .75);
 }
 
+@media (min-width: 960px) {
+  body {
+    background: #E5E5E5 url('/assets/images/background.jpg') no-repeat fixed bottom right;
+  }
+}
 
 // GitHub corner
 
