@@ -14,7 +14,7 @@
                 <div class="row">
                     <div class="col-sm-7">
                         <h1>
-                            <img src="/assets/images/icons/factions/{{ $unit->faction->slug }}.png" alt="{{ $unit->faction->name }} Icon" style="width: 36px;" class="float-right">
+                            <img src="/assets/images/icons/factions/{{ $unit->faction->slug }}.png" alt="{{ $unit->faction->name }} Logo" title="{{ $unit->faction->name }}" style="width: 36px;" class="float-right">
                             {{ $unit->name}}
                         </h1>
 

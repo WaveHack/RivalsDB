@@ -17,7 +17,7 @@
                 @endif
 
                 <h1>
-                    <img src="/assets/images/icons/factions/{{ $faction->slug }}.png" alt="{{ $faction->name }} Icon" style="width: 36px;">
+                    <img src="/assets/images/icons/factions/{{ $faction->slug }}.png" alt="{{ $faction->name }} Logo" title="{{ $faction->name }}" style="width: 36px;">
                     {{ $faction->full_name }}
                     ({{ $faction->name }})
                 </h1>
