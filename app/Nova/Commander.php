@@ -2,9 +2,9 @@
 
 namespace App\Nova;
 
+use Illuminate\Http\Request;
 use Laravel\Nova\Fields\BelongsTo;
 use Laravel\Nova\Fields\ID;
-use Illuminate\Http\Request;
 use Laravel\Nova\Fields\Number;
 use Laravel\Nova\Fields\Select;
 use Laravel\Nova\Fields\Text;
@@ -68,7 +68,7 @@ class Commander extends Resource
                 ->sortable()
                 ->rules('required', 'max:255'),
 
-            Textarea::make('Description')
+            Textarea::make('Flavor Description')
                 ->hideFromIndex(),
 
             Select::make('Rarity')
