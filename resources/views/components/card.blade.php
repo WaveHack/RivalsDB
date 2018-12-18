@@ -44,7 +44,7 @@ $entity (eloquent model)
         <h6 class="card-subtitle mb-2 text-muted">
             <span class="rarity-{{ $entity->rarity }}">
                 {{ ucfirst($entity->rarity) }}
-                {{ ucfirst($type) }}
+                {{ $type === 'commander' ? 'Commander' : ucfirst($entity->type) }}
             </span>
         </h6>
 
